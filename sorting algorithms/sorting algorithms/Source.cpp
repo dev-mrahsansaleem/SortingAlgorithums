@@ -173,10 +173,44 @@ int shellSort(int arr[], int n)
 	}
 	return 0;
 }
+
+int k = 0;
+void Counting_Sort(int A[], int B[], int n)
+{
+	int *C=new int[k];
+	for (int i = 0;i<k + 1;i++)
+	{
+		/*It will initialize the C with zero*/
+		C[i] = 0;
+	}
+	for (int j = 1;j < n;j++)
+	{
+		/*It will count the occurence of every element x in A
+		and increment it at position x in C*/
+		C[A[j]]++;
+	}
+	for (int i = 1;i <= k;i++)
+	{
+		/*It will store the last
+		occurence of the element i */
+		C[i] += C[i - 1];
+	}
+	for (int j = n-1;j >= 1;j--)
+	{
+		/*It will place the elements at their
+		respective index*/
+		B[C[A[j]]] = A[j];
+		/*It will help if an element occurs
+		more than one time*/
+		C[A[j]] = C[A[j]] - 1;
+	}
+}
 int main()
 {
 	const int size = 10;
 	int arr[size];
+	int out[size];
+
 
 	cout << "bubble sort" << endl;
 	randomGenrator(arr, size);
@@ -217,38 +251,44 @@ int main()
 	t2 = std::chrono::high_resolution_clock::now();
 	auto shellduration = duration_cast<microseconds>(t2 - t1).count();
 	printArray(arr, size);
-	
+
+	cout << "counting sort" << endl;
 	randomGenrator(arr, size);
 	t1 = std::chrono::high_resolution_clock::now();
+	//Counting_Sort(arr,out,size);
 	t2 = std::chrono::high_resolution_clock::now();
 	auto countingduration = duration_cast<microseconds>(t2 - t1).count();
 	printArray(arr, size);
 
+	cout << "bogo sort" << endl;
 	randomGenrator(arr, size);
 	t1 = std::chrono::high_resolution_clock::now();
 	t2 = std::chrono::high_resolution_clock::now();
 	auto bogoduration = duration_cast<microseconds>(t2 - t1).count();
 	printArray(arr, size);
 
+	cout << "time sort" << endl;
 	randomGenrator(arr, size);
 	t1 = std::chrono::high_resolution_clock::now();
 	t2 = std::chrono::high_resolution_clock::now();
 	auto timeduration = duration_cast<microseconds>(t2 - t1).count();
 	printArray(arr, size);
 
+	cout << "odd even sort" << endl;
 	randomGenrator(arr, size);
 	t1 = std::chrono::high_resolution_clock::now();
 	t2 = std::chrono::high_resolution_clock::now();
 	auto oddduration = duration_cast<microseconds>(t2 - t1).count();
 	printArray(arr, size);
 
+	cout << "cocktail sort" << endl;
 	randomGenrator(arr, size);
 	t1 = std::chrono::high_resolution_clock::now();
 	t2 = std::chrono::high_resolution_clock::now();
 	auto cocktailduration = duration_cast<microseconds>(t2 - t1).count();
 	printArray(arr, size);
 
-	cout << bubbleduration << "microseconds" << endl;
+	cout << bubbleduration << " microseconds" << endl;
 	cout << selectionduration << " microseconds" << endl;
 	cout << heapduration << " microseconds" << endl;
 	cout << radixduration << " microseconds" << endl;
