@@ -7,7 +7,7 @@ void randomGenrator(int arr[], int size)
 {
 	for (int i = 0; i < size;i++)
 	{
-		arr[i] = rand()%10;
+		arr[i] = rand()%1000+1;
 	}
 }
 
@@ -292,101 +292,109 @@ void CocktailSort(int a[], int n)
 }
 int main()
 {
-	const int size = 10;
-	int arr[size];
-	int out[size];
+	int size=10;
+	int counter = 1;
+	while (counter<)
+	{
+		int *arr=new int[size];
+		int *out=new int[size];
 
 
-	cout << "bubble sort" << endl;
-	randomGenrator(arr, size);
-	auto t1 = std::chrono::high_resolution_clock::now();
-	bubbleSort(arr, size);
-	auto t2 = std::chrono::high_resolution_clock::now();
-	auto bubbleduration = duration_cast<microseconds>(t2 - t1).count();
-	printArray(arr, size);
+		cout << "bubble sort" << endl;
+		randomGenrator(arr, size);
+		auto t1 = std::chrono::high_resolution_clock::now();
+		bubbleSort(arr, size);
+		auto t2 = std::chrono::high_resolution_clock::now();
+		auto bubbleduration = duration_cast<microseconds>(t2 - t1).count();
+		printArray(arr, size);
 
-	cout << "selection sort" << endl;
-	randomGenrator(arr, size);
-	t1 = std::chrono::high_resolution_clock::now();
-	selectionSort(arr, size);
-	t2 = std::chrono::high_resolution_clock::now();
-	auto selectionduration = duration_cast<microseconds>(t2 - t1).count();
-	printArray(arr, size);
+		cout << "selection sort" << endl;
+		randomGenrator(arr, size);
+		t1 = std::chrono::high_resolution_clock::now();
+		selectionSort(arr, size);
+		t2 = std::chrono::high_resolution_clock::now();
+		auto selectionduration = duration_cast<microseconds>(t2 - t1).count();
+		printArray(arr, size);
 
-	cout << "heap sort" << endl;
-	randomGenrator(arr, size);
-	t1 = std::chrono::high_resolution_clock::now();
-	heapSort(arr, size);
-	t2 = std::chrono::high_resolution_clock::now();
-	auto heapduration = duration_cast<microseconds>(t2 - t1).count();
-	printArray(arr, size);
+		cout << "heap sort" << endl;
+		randomGenrator(arr, size);
+		t1 = std::chrono::high_resolution_clock::now();
+		heapSort(arr, size);
+		t2 = std::chrono::high_resolution_clock::now();
+		auto heapduration = duration_cast<microseconds>(t2 - t1).count();
+		printArray(arr, size);
 
-	cout << "radix sort" << endl;
-	randomGenrator(arr, size);
-	t1 = std::chrono::high_resolution_clock::now();
-	radixsort(arr, size);
-	t2 = std::chrono::high_resolution_clock::now();
-	auto radixduration = duration_cast<microseconds>(t2 - t1).count();
-	printArray(arr, size);
+		cout << "radix sort" << endl;
+		randomGenrator(arr, size);
+		t1 = std::chrono::high_resolution_clock::now();
+		radixsort(arr, size);
+		t2 = std::chrono::high_resolution_clock::now();
+		auto radixduration = duration_cast<microseconds>(t2 - t1).count();
+		printArray(arr, size);
 
-	cout << "shell sort" << endl;
-	randomGenrator(arr, size);
-	t1 = std::chrono::high_resolution_clock::now();
-	shellSort(arr, size);
-	t2 = std::chrono::high_resolution_clock::now();
-	auto shellduration = duration_cast<microseconds>(t2 - t1).count();
-	printArray(arr, size);
+		cout << "shell sort" << endl;
+		randomGenrator(arr, size);
+		t1 = std::chrono::high_resolution_clock::now();
+		shellSort(arr, size);
+		t2 = std::chrono::high_resolution_clock::now();
+		auto shellduration = duration_cast<microseconds>(t2 - t1).count();
+		printArray(arr, size);
 
-	cout << "counting sort" << endl;
-	randomGenrator(arr, size);
-	t1 = std::chrono::high_resolution_clock::now();
-	//Counting_Sort(arr,out,size);
-	t2 = std::chrono::high_resolution_clock::now();
-	auto countingduration = duration_cast<microseconds>(t2 - t1).count();
-	printArray(arr, size);
+		cout << "counting sort" << endl;
+		randomGenrator(arr, size);
+		t1 = std::chrono::high_resolution_clock::now();
+		//Counting_Sort(arr,out,size);
+		t2 = std::chrono::high_resolution_clock::now();
+		auto countingduration = duration_cast<microseconds>(t2 - t1).count();
+		printArray(arr, size);
 
-	cout << "bogo sort" << endl;
-	randomGenrator(arr, size);
-	t1 = std::chrono::high_resolution_clock::now();
-	bogosort(arr, size);
-	t2 = std::chrono::high_resolution_clock::now();
-	auto bogoduration = duration_cast<microseconds>(t2 - t1).count();
-	printArray(arr, size);
+		cout << "bogo sort" << endl;
+		randomGenrator(arr, size);
+		t1 = std::chrono::high_resolution_clock::now();
+		bogosort(arr, size);
+		t2 = std::chrono::high_resolution_clock::now();
+		auto bogoduration = duration_cast<microseconds>(t2 - t1).count();
+		printArray(arr, size);
 
-	cout << "time sort" << endl;
-	randomGenrator(arr, size);
-	t1 = std::chrono::high_resolution_clock::now();
-	timSort(arr, size);
-	t2 = std::chrono::high_resolution_clock::now();
-	auto timeduration = duration_cast<microseconds>(t2 - t1).count();
-	printArray(arr, size);
+		cout << "time sort" << endl;
+		randomGenrator(arr, size);
+		t1 = std::chrono::high_resolution_clock::now();
+		timSort(arr, size);
+		t2 = std::chrono::high_resolution_clock::now();
+		auto timeduration = duration_cast<microseconds>(t2 - t1).count();
+		printArray(arr, size);
 
-	cout << "odd even sort" << endl;
-	randomGenrator(arr, size);
-	t1 = std::chrono::high_resolution_clock::now();
-	oddEvenSort(arr, size);
-	t2 = std::chrono::high_resolution_clock::now();
-	auto oddduration = duration_cast<microseconds>(t2 - t1).count();
-	printArray(arr, size);
+		cout << "odd even sort" << endl;
+		randomGenrator(arr, size);
+		t1 = std::chrono::high_resolution_clock::now();
+		oddEvenSort(arr, size);
+		t2 = std::chrono::high_resolution_clock::now();
+		auto oddduration = duration_cast<microseconds>(t2 - t1).count();
+		printArray(arr, size);
 
-	cout << "cocktail sort" << endl;
-	randomGenrator(arr, size);
-	t1 = std::chrono::high_resolution_clock::now();
-	CocktailSort(arr, size);
-	t2 = std::chrono::high_resolution_clock::now();
-	auto cocktailduration = duration_cast<microseconds>(t2 - t1).count();
-	printArray(arr, size);
+		cout << "cocktail sort" << endl;
+		randomGenrator(arr, size);
+		t1 = std::chrono::high_resolution_clock::now();
+		CocktailSort(arr, size);
+		t2 = std::chrono::high_resolution_clock::now();
+		auto cocktailduration = duration_cast<microseconds>(t2 - t1).count();
+		printArray(arr, size);
 
-	cout << "bubble sort time=>    " << bubbleduration << " microseconds" << endl;
-	cout << "selection sort time=> " << selectionduration << " microseconds" << endl;
-	cout << "heap sort time=>      " << heapduration << " microseconds" << endl;
-	cout << "radix sort time=>     " << radixduration << " microseconds" << endl;
-	cout << "shell sort time=>     " << shellduration << " microseconds" << endl;
-	cout << "counting sort time=>  " << countingduration << " microseconds" << endl;
-	cout << "bogo sort time=>      " << bogoduration << " microseconds" << endl;
-	cout << "time sort time=>      " << timeduration << " microseconds" << endl;
-	cout << "oddeven sort time=>   " << oddduration << " microseconds" << endl;
-	cout << "cocktail sort time=>  " << cocktailduration << " microseconds" << endl;
+		cout << "size of array is : " << size << endl;
+		cout << "bubble sort time=>    " << bubbleduration << " microseconds" << endl;
+		cout << "selection sort time=> " << selectionduration << " microseconds" << endl;
+		cout << "heap sort time=>      " << heapduration << " microseconds" << endl;
+		cout << "radix sort time=>     " << radixduration << " microseconds" << endl;
+		cout << "shell sort time=>     " << shellduration << " microseconds" << endl;
+		cout << "counting sort time=>  " << countingduration << " microseconds" << endl;
+		cout << "bogo sort time=>      " << bogoduration << " microseconds" << endl;
+		cout << "time sort time=>      " << timeduration << " microseconds" << endl;
+		cout << "oddeven sort time=>   " << oddduration << " microseconds" << endl;
+		cout << "cocktail sort time=>  " << cocktailduration << " microseconds" << endl;
+		
+		counter = counter + 1;
+		size = size * 10;
+	}
 	system("pause");
 	return 0;
 }
