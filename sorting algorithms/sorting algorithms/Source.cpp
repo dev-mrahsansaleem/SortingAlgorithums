@@ -361,7 +361,7 @@ int main()
 		cout << "tim sort" << endl;
 		randomGenrator(arr, size);
 		t1 = std::chrono::high_resolution_clock::now();
-		if(size<10000)
+		if(size<1000)
 			timSort(arr, size);
 		t2 = std::chrono::high_resolution_clock::now();
 		auto timeduration = duration_cast<microseconds>(t2 - t1).count();
