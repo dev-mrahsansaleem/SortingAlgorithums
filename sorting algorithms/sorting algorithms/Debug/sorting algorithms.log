@@ -1,3 +1,2 @@
 ﻿  Source.cpp
-  sorting algorithms.vcxproj -> E:\git hub\SortingAlgorithums\sorting algorithms\Debug\sorting algorithms.exe
-  sorting algorithms.vcxproj -> E:\git hub\SortingAlgorithums\sorting algorithms\Debug\sorting algorithms.pdb (Partial PDB)
+LINK : fatal error LNK1201: error writing to program database 'E:\git hub\SortingAlgorithums\sorting algorithms\Debug\sorting algorithms.pdb'; check for insufficient disk space, invalid path, or insufficient privilege

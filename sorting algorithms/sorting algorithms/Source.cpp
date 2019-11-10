@@ -294,11 +294,12 @@ int main()
 {
 	int size=10;
 	int counter = 1;
-	while (counter<)
+	while (counter<10)
 	{
+		cout << "enter size";
+		cin >> size;
 		int *arr=new int[size];
 		int *out=new int[size];
-
 
 		cout << "bubble sort" << endl;
 		randomGenrator(arr, size);
@@ -351,15 +352,17 @@ int main()
 		cout << "bogo sort" << endl;
 		randomGenrator(arr, size);
 		t1 = std::chrono::high_resolution_clock::now();
-		bogosort(arr, size);
+		if (size<=10)
+			bogosort(arr, size);
 		t2 = std::chrono::high_resolution_clock::now();
 		auto bogoduration = duration_cast<microseconds>(t2 - t1).count();
 		printArray(arr, size);
 
-		cout << "time sort" << endl;
+		cout << "tim sort" << endl;
 		randomGenrator(arr, size);
 		t1 = std::chrono::high_resolution_clock::now();
-		timSort(arr, size);
+		if(size<10000)
+			timSort(arr, size);
 		t2 = std::chrono::high_resolution_clock::now();
 		auto timeduration = duration_cast<microseconds>(t2 - t1).count();
 		printArray(arr, size);
@@ -391,9 +394,7 @@ int main()
 		cout << "time sort time=>      " << timeduration << " microseconds" << endl;
 		cout << "oddeven sort time=>   " << oddduration << " microseconds" << endl;
 		cout << "cocktail sort time=>  " << cocktailduration << " microseconds" << endl;
-		
 		counter = counter + 1;
-		size = size * 10;
 	}
 	system("pause");
 	return 0;
