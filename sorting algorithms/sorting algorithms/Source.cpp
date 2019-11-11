@@ -384,6 +384,7 @@ int main()
 		printArray(arr, size);
 
 		cout << "size of array is : " << size << endl;
+		cout << "time for each of the sorting algorithm is:" << endl;
 		cout << "bubble sort time=>    " << bubbleduration << " microseconds" << endl;
 		cout << "selection sort time=> " << selectionduration << " microseconds" << endl;
 		cout << "heap sort time=>      " << heapduration << " microseconds" << endl;
